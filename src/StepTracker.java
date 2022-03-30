@@ -17,20 +17,13 @@ public class StepTracker {
         else
             System.out.println("Вы ввели некорректное значение!"+'\n');
     }
-    public void fillingWithZeros(){
-        for (int i = 0; i < monthToData.length; i++) {
-            for (int j = 0; j < monthToData[i].length; j++) {
-                monthToData[i][j] = 0;
-            }
-        }
-    }
     public void inputSteps(int userMonth,int userDay,int userSteps){
         if(userSteps>-1 && userMonth>0 && userMonth<13 && userDay>0 && userDay<31){
             monthToData[userDay-1][userMonth-1]=userSteps;
             System.out.println("Данные успешно внесены."+'\n');
         }
         else
-            Eror();
+            eror();
     }
     public void statistics(int userMonth){
         if(userMonth>0 && userMonth<13) {
@@ -54,17 +47,17 @@ public class StepTracker {
                     }
                     }
                 }
-            Print();
+            print();;
 
         }
         else{
-            Eror();
+            eror();
     }
    }
-    private void Eror(){
+    private void eror(){
         System.out.println("Вы ввели некорректное значение!"+'\n' +"Напонинание:"+'\n' + "В году 12 месяцев,в месяце 30 дней."+'\n');
     }
-    private void Print(){
+    private void print(){
         System.out.println('\n');
         System.out.println("Общее количество шагов за месяц: "+sum);
         System.out.println("Максильмальное количество шагов за месяц: "+max);

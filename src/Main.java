@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         StepTracker first = new StepTracker();
-        first.fillingWithZeros();//заполнил нулями массив
         while (true) {
             printMenu();
             int userInput = scanner.nextInt();
@@ -36,7 +35,7 @@ public class Main {
                 case(4):{
                     System.out.println("Программа завершена");
                     scanner.close();
-                    System.exit(0);
+                    return;
                 }
                 default:
                     System.out.println("Вы ввели некорректную комманду");
